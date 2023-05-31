@@ -11,6 +11,8 @@ public class OrderMessage {
 
     private String orderId;
 
+    private boolean cancelled;
+
     private Long customerId;
 
     private Long productId;
@@ -34,6 +36,14 @@ public class OrderMessage {
 
     public Long getId() {
         return id;
+    }
+
+    public boolean getCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
     }
 
     public void setId(Long id) {

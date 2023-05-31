@@ -47,6 +47,18 @@ public class OrderController {
         }
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Order> cancelOrder(@PathVariable Long id, @RequestBody Order order) {
+        Optional<Order> maybeExistingOrder = orderRepository.findById(id);
+        if (maybeExistingOrder.isPresent()) {
+            order.setCancelled(true);
+            Order updatedOrder = orderRepository.save(order);
+            return ResponseEntity.ok(updatedOrder);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
         Optional<Order> maybeExistingOrder = orderRepository.findById(id);

@@ -14,6 +14,8 @@ public class Order {
     @Column(unique = true)
     private String orderId;
 
+    private boolean cancelled;
+
     private Long customerId;
 
     private Long productId;
@@ -27,12 +29,13 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate) {
+    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate, boolean cancelled) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.productId = productId;
         this.quantity = quantity;
         this.orderDate = orderDate;
+        this.cancelled = cancelled;
     }
 
     // Getters and Setters
@@ -43,6 +46,14 @@ public class Order {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean getCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
     }
 
     public String getOrderId() {
