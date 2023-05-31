@@ -23,6 +23,12 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+    @GetMapping("/cancelled")
+    public ResponseEntity<Order> getCancelledOrders() {
+        Optional<Order> maybeOrder = orderRepository.findAll().stream().filter(Order::getCancelled).findAny();
+        return maybeOrder.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
         Optional<Order> maybeOrder = orderRepository.findById(id);
