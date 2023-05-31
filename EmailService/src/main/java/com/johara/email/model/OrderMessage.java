@@ -5,6 +5,9 @@ import java.time.LocalDateTime;
 public class OrderMessage {
     private Long id;
     private String orderId;
+
+    private boolean cancelled;
+
     private Long customerId;
     private Long productId;
     private int quantity;
@@ -16,6 +19,14 @@ public class OrderMessage {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean getCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
     }
 
     public String getOrderId() {

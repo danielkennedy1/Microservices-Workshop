@@ -16,4 +16,12 @@ public class EmailSendingService {
         // Implement your email sending logic here
         // Use the orderMessage to retrieve necessary information for the email content, such as customer email, product details, etc.
     }
+
+    public void sendOrderCancelledEmail(OrderMessage orderMessage) {
+        // Logic to send order confirmation email
+        LOGGER.info("Sending order cancelled email for orderId: {}", orderMessage.getOrderId());
+
+        // Implement your email sending logic here
+        // Use the orderMessage to retrieve necessary information for the email content, such as customer email, product details, etc.
+    }
 }
