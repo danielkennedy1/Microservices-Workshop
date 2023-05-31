@@ -31,8 +31,22 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+        order.setOrderStatus(Order.OrderStatus.CREATED);
         Order createdOrder = orderService.createOrder(order);
         return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/cancel/{id}")
+    public ResponseEntity<Order> cancelOrder(@PathVariable Long id) {
+        Optional<Order> maybeOrder = orderRepository.findById(id);
+        if (maybeOrder.isPresent()) {
+            Order order = maybeOrder.get();
+            order.setOrderStatus(Order.OrderStatus.CANCELLED);
+            Order updatedOrder = orderService.updateOrder(order);
+            return ResponseEntity.ok(updatedOrder);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/{id}")

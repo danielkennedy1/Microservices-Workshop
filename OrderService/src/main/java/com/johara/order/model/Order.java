@@ -7,12 +7,30 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "orders")
 public class Order {
+    public enum OrderStatus {
+        CREATED,
+        PROCESSING,
+        COMPLETED,
+        CANCELLED,
+        FAILED
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true)
     private String orderId;
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus;
 
     private Long customerId;
 

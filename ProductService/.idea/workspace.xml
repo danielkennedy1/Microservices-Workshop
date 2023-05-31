@@ -5,25 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17ee29fe-8ae7-4434-8fdc-a2c078188ea7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../EmailService/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailService/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailService/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailService/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailService/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OrderService/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OrderService/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OrderService/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OrderService/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OrderService/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OrderService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/johara/product/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johara/product/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServiceRegistrationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServiceRegistrationService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailService/src/main/java/com/johara/email/kafka/OrderPlacedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailService/src/main/java/com/johara/email/kafka/OrderPlacedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/model/OrderMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/model/OrderMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/src/main/java/com/johara/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderService/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../OrderService/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +41,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -70,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685522305619</updated>
       <workItem from="1685522307223" duration="8000" />
-      <workItem from="1685522346081" duration="2854000" />
+      <workItem from="1685522346081" duration="3752000" />
     </task>
     <servers />
   </component>

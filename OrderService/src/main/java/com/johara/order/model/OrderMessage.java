@@ -19,6 +19,16 @@ public class OrderMessage {
 
     private LocalDateTime orderDate;
 
+    public Order.OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(Order.OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    private Order.OrderStatus orderStatus;
+
     public OrderMessage() {
     }
 
