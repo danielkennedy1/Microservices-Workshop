@@ -29,6 +29,17 @@ public class OrderService {
         return savedOrder;
     }
 
+    public Order updateOrder(Order order){
+        // Save the order to the database
+        Order savedOrder = orderRepository.save(order);
+
+        // Send the order message to Kafka
+        OrderMessage orderMessage = convertToOrderMessage(savedOrder);
+        orderProducerService.sendOrderMessage(orderMessage);
+
+        return savedOrder;
+    }
+
     private OrderMessage convertToOrderMessage(Order order) {
         // Convert Order object to OrderMessage object
         OrderMessage orderMessage = new OrderMessage();
@@ -38,6 +49,7 @@ public class OrderService {
         orderMessage.setProductId(order.getProductId());
         orderMessage.setQuantity(order.getQuantity());
         orderMessage.setOrderDate(order.getOrderDate());
+        orderMessage.setOrderStatus(order.getOrderStatus());
 
         return orderMessage;
     }
