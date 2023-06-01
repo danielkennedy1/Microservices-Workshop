@@ -22,12 +22,21 @@ public class OrderMessage {
     public Order.OrderStatus getOrderStatus() {
         return orderStatus;
     }
+    public Order.OrderCountry getOrderCountry() {
+        return orderCountry;
+    }
+
+    public void setOrderCountry(Order.OrderCountry orderCountry) {
+        this.orderCountry = orderCountry;
+    }
 
     public void setOrderStatus(Order.OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
 
     private Order.OrderStatus orderStatus;
+
+    private Order.OrderCountry orderCountry;
 
     public OrderMessage() {
     }

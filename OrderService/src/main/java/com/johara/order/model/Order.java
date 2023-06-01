@@ -14,6 +14,13 @@ public class Order {
         CANCELLED,
         FAILED
     }
+
+    public enum OrderCountry {
+        IRELAND,
+        UK,
+        EURPOE,
+        REST_OF_WORLD
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,14 +36,27 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
+    public OrderCountry getOrderCountry() {
+        return orderCountry;
+    }
+
+
+    public void setOrderCountry(OrderCountry orderCountry) {
+        this.orderCountry = orderCountry;
+    }
+
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+
+    @Enumerated(EnumType.STRING)
+    private OrderCountry orderCountry;
 
     private Long customerId;
 
     private Long productId;
 
     private int quantity;
+
 
     private LocalDateTime orderDate;
 

@@ -12,6 +12,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderProducerService orderProducerService;
 
+
     @Autowired
     public OrderService(OrderRepository orderRepository, OrderProducerService orderProducerService) {
         this.orderRepository = orderRepository;
@@ -50,6 +51,7 @@ public class OrderService {
         orderMessage.setQuantity(order.getQuantity());
         orderMessage.setOrderDate(order.getOrderDate());
         orderMessage.setOrderStatus(order.getOrderStatus());
+        orderMessage.setOrderCountry(order.getOrderCountry());
 
         return orderMessage;
     }
