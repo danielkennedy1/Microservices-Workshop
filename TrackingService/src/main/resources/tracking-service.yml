@@ -1,0 +1,35 @@
+# Spring properties
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  application:
+    name: tracking-service
+  datasource:
+    url: jdbc:h2:mem:testdb;INIT=RUNSCRIPT FROM 'classpath:data.sql'
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: tracking-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring.json.trusted.packages: ie.dankennedy.trackingservice
+        value.default.type: java.lang.String
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+# HTTP Server
+server:
+  port: 2225   # HTTP (Tomcat) port

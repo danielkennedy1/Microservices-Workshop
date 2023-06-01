@@ -2,6 +2,8 @@ package com.johara.email.model;
 
 import java.time.LocalDateTime;
 
+import com.johara.order.model.Order;
+
 public class OrderMessage {
     private Long id;
     private String orderId;
@@ -9,6 +11,16 @@ public class OrderMessage {
     private Long productId;
     private int quantity;
     private LocalDateTime orderDate;
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(Order.OrderStatus orderStatus) {
+        this.orderStatus = orderStatus.getStatus();
+    }
+
+    private String orderStatus;
 
     public Long getId() {
         return id;

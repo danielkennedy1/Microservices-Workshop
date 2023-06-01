@@ -8,11 +8,21 @@ import java.time.LocalDateTime;
 @Table(name = "orders")
 public class Order {
     public enum OrderStatus {
-        CREATED,
-        PROCESSING,
-        COMPLETED,
-        CANCELLED,
-        FAILED
+        CREATED("CREATED"),
+        PROCESSING("PROCESSING"),
+        COMPLETED("COMPLETED"),
+        CANCELLED("CANCELLED"),
+        FAILED("FAILED");
+
+        private final String status;
+
+        OrderStatus(String status) {
+            this.status = status;
+        }
+
+        public String getStatus() {
+            return status;
+        }
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

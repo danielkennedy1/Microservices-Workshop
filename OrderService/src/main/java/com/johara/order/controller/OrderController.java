@@ -3,6 +3,8 @@ package com.johara.order.controller;
 import com.johara.order.model.Order;
 import com.johara.order.repository.OrderRepository;
 import com.johara.order.service.OrderService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -75,5 +77,28 @@ public class OrderController {
     @GetMapping
     public List<Order> getAllOrders() {
         return orderRepository.findAll();
+    }
+
+    @GetMapping("/cookies")
+    public String getCookies(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+            StringBuilder cookieInfo = new StringBuilder();
+            for (Cookie cookie : cookies) {
+                cookieInfo.append("Name: ").append(cookie.getName());
+                cookieInfo.append(", Value: ").append(cookie.getValue());
+                cookieInfo.append(", Domain: ").append(cookie.getDomain());
+                cookieInfo.append(", Path: ").append(cookie.getPath());
+                cookieInfo.append(", Max-Age: ").append(cookie.getMaxAge());
+                cookieInfo.append(", Secure: ").append(cookie.getSecure());
+                cookieInfo.append(", HttpOnly: ").append(cookie.isHttpOnly());
+                cookieInfo.append("<br>");
+            }
+
+            return cookieInfo.toString();
+        }
+
+        return "No cookies found.";
     }
 }

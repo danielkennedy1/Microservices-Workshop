@@ -19,15 +19,15 @@ public class OrderMessage {
 
     private LocalDateTime orderDate;
 
-    public Order.OrderStatus getOrderStatus() {
+    public String getOrderStatus() {
         return orderStatus;
     }
 
     public void setOrderStatus(Order.OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
+        this.orderStatus = orderStatus.getStatus();
     }
 
-    private Order.OrderStatus orderStatus;
+    private String orderStatus;
 
     public OrderMessage() {
     }
