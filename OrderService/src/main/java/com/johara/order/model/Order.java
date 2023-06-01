@@ -18,7 +18,7 @@ public class Order {
     public enum OrderCountry {
         IRELAND,
         UK,
-        EURPOE,
+        EUROPE,
         REST_OF_WORLD
     }
     @Id
@@ -65,12 +65,13 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate) {
+    public Order(String orderId, Long customerId, Long productId, int quantity, LocalDateTime orderDate, OrderCountry orderCountry) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.productId = productId;
         this.quantity = quantity;
         this.orderDate = orderDate;
+        this.orderCountry = orderCountry;
     }
 
     // Getters and Setters
