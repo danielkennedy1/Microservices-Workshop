@@ -19,10 +19,20 @@ public class OrderPlacedEventListener {
     }
 
     @KafkaListener(topics = "orders", groupId = "${spring.kafka.consumer.group-id}")
-    public void handleOrderPlacedEvent(OrderMessage orderMessage) {
-        LOGGER.info("Received OrderPlacedEvent for order: {}", orderMessage.getOrderId());
+    public void handleOrderUpdateEvent(OrderMessage orderMessage) {
+        LOGGER.info("Received OrderUpdateEvent for order: {}", orderMessage.getOrderId());
+        LOGGER.info("Status of order: {}", orderMessage.getOrderStatus());
 
-        // Call the email service to send the email
-        emailSendingService.sendOrderConfirmationEmail(orderMessage);
+        if(orderMessage.getOrderStatus().equals("CANCELLED")) {
+            // Call the email service to send the email
+            emailSendingService.sendOrderCancelledEmail(orderMessage);
+            return;
+        }else if (!orderMessage.getOrderStatus().equals("COMPLETED")) {
+            LOGGER.info("Order status is not COMPLETED or CANCELLED. No email will be sent");
+            return;
+        }
+
+        // Unknow order status
+        LOGGER.info("Order status is not COMPLETED or CANCELLED. No email will be sent");
     }
 }
