@@ -36,6 +36,29 @@ public class OrderController {
         return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
     }
 
+
+    @GetMapping
+    public double getDeliveryEstimate(@RequestBody Order order) {
+        Order.OrderCountry country = order.getOrderCountry();
+        double price;
+        switch (country) {
+            case IRELAND:
+                price = 1.95;
+                break;
+            case UK:
+                price = 5;
+                break;
+            case EUROPE:
+                price = 8;
+                break;
+            case REST_OF_WORLD:
+                price = 15;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + country);
+        }
+        return price;
+    }
     @PostMapping("/cancel/{id}")
     public ResponseEntity<Order> cancelOrder(@PathVariable Long id) {
         Optional<Order> maybeOrder = orderRepository.findById(id);
